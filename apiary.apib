@@ -1,0 +1,154 @@
+FORMAT: 1A
+HOST: http://orders.apiblueprint.org/
+
+# OrderAPI
+
+Search and view orders
+
+## Order Collection [/orders]
+
+### List All Orders [GET]
+
++ Response 200 (application/json)
+
+        [
+                { "name"   : "Karsten Nielsen",
+                  "sku"    : "20223",
+                  "price"  : 23.95,
+                  "shipTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" },
+                  "billTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" }
+                },
+                { "name"   : "Morten Nielsen",
+                  "sku"    : "20223",
+                  "price"  : 23.95,
+                  "shipTo" : {  "name" : "Liselotte Svendsen",
+                                "address" : "Olof Palme Alle 10",
+                                "city" : "Frederiksberg",
+                                "country" : "Denmark",
+                                "zip"   : "2250" },
+                  "billTo" : {  "name" : "Liselotte Svendsen",
+                                "address" : "Olof Palme Alle 10",
+                                "city" : "Frederiksberg",
+                                "country" : "Denmark",
+                                "zip"   : "2250" }
+                }
+        ]
+
+## Order [/orders/{order_id}]
+
+Search for orders based on OrderID
+
++ Parameters
+    + order_id (number) - ID of the Question in the form of an integer
+
+### View an Order [GET]
+
++ Response 200 (application/json)
+
+        { "name"   : "Svend GET Nielsen",
+                  "sku"    : "20223",
+                  "price"  : 23.95,
+                  "shipTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" },
+                  "billTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" }
+                }
+
+### View an Order [PUT]
+
++ Response 200 (application/json)
+
+        { "name"   : "Karsten PUT Nielsen",
+                  "sku"    : "20223",
+                  "price"  : 23.95,
+                  "shipTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" },
+                  "billTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" }
+                }
+                
+### Delete an Order [DELETE]
+
++ Response 200 (application/json)
+
+        { "name"   : "Karsten DELETE Nielsen",
+                  "sku"    : "20223",
+                  "price"  : 23.95,
+                  "shipTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" },
+                  "billTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" }
+                }
+                
+                
+## Order Search [/orders{?date,customer}]
+
+Search for orders based on date and customer ID
+
++ Parameters
+    + date (string) - the order date for the order
+    + customer (string) - the customer ID for customer
+
+### Search an Order [GET]
+
++ Response 200 (application/json)
+
+        { "name"   : "Karsten GET URL Nielsen",
+                  "sku"    : "20223",
+                  "price"  : 23.95,
+                  "shipTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" },
+                  "billTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" }
+                }
+                
+### Search an Order [POST]
+
++ Response 200 (application/json)
+
+        { "name"   : "Karsten POST URL Nielsen",
+                  "sku"    : "20223",
+                  "price"  : 23.95,
+                  "shipTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" },
+                  "billTo" : {  "name" : "Svend Clausen",
+                                "address" : "Bredgade 10",
+                                "city" : "Odense",
+                                "country" : "Denmark",
+                                "zip"   : "5500" }
+                }
